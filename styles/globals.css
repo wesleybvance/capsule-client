@@ -18,5 +18,9 @@ a {
 }
 
 body {
-  background-color: #88effd;
+  background-color: #D9D9D9;
+}
+
+.smallplease {
+  max-height: 100px;
 }
