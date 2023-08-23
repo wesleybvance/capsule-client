@@ -17,15 +17,13 @@ export default function ItemCarousel({
   });
 
   return (
-    <div>
-      <Carousel.Item>
-        <Image src={photoUrl} />
-        <Carousel.Caption>
-          <h3>{name}</h3>
-          {category ? (<h5>{category.name}</h5>) : ''}
-        </Carousel.Caption>
-      </Carousel.Item>
-    </div>
+    <Carousel.Item>
+      <Image src={photoUrl} />
+      <Carousel.Caption>
+        <h2>{name}</h2>
+        {category ? (<h5>{category.name}</h5>) : ''}
+      </Carousel.Caption>
+    </Carousel.Item>
   );
 }
 

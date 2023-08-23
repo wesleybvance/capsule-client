@@ -20,3 +20,7 @@ a {
 body {
   background-color: #D9D9D9;
 }
+
+.smallplease {
+  max-height: 100px;
+}
