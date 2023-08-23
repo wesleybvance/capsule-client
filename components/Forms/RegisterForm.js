@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FloatingLabel } from 'react-bootstrap';
-import { registerUser } from '../utils/auth'; // Update with path to registerUser
+import { registerUser } from '../../utils/auth'; // Update with path to registerUser
 
 function RegisterForm({ user, updateUser }) {
   // eslint-disable-next-line no-unused-vars
