@@ -2,12 +2,17 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { FloatingLabel } from 'react-bootstrap';
 import { registerUser } from '../utils/auth'; // Update with path to registerUser
 
 function RegisterForm({ user, updateUser }) {
+  // eslint-disable-next-line no-unused-vars
   const [formData, setFormData] = useState({
-    bio: '',
+    email: '',
     uid: user.uid,
+    profileImage: '',
+    firstName: '',
+    lastName: '',
   });
 
   const handleSubmit = (e) => {
@@ -17,12 +22,35 @@ function RegisterForm({ user, updateUser }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Gamer Bio</Form.Label>
-        <Form.Control as="textarea" name="bio" required placeholder="Enter your Bio" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-        <Form.Text className="text-muted">Let other gamers know a little bit about you...</Form.Text>
-      </Form.Group>
-      <Button variant="primary" type="submit">
+      <FloatingLabel
+        controlId="floatingTextarea"
+        label="First Name"
+        className="mt-3"
+      >
+        <Form.Control type="text" placeholder="Cher" name="firstName" />
+      </FloatingLabel>
+      <FloatingLabel
+        controlId="floatingTextarea"
+        label="Last Name"
+        className="mt-3"
+      >
+        <Form.Control type="text" placeholder="Horowitz" name="lastName" />
+      </FloatingLabel>
+      <FloatingLabel
+        controlId="floatingInput"
+        label="Email Address"
+        className="mt-3"
+      >
+        <Form.Control type="email" name="email" placeholder="name@example.com" />
+      </FloatingLabel>
+      <FloatingLabel
+        controlId="floatingTextarea"
+        label="Profile Picture URL"
+        className="mt-3"
+      >
+        <Form.Control type="text" placeholder="" name="profileImage" />
+      </FloatingLabel>
+      <Button variant="primary" type="submit" className="mt-3">
         Submit
       </Button>
     </Form>
