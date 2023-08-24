@@ -2,8 +2,8 @@ import { clientCredentials } from '../client';
 
 const endpoint = clientCredentials.databaseURL;
 
-const getSingleItem = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items/${id}`, {
+const getSingleOutfit = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits/${id}`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
@@ -14,8 +14,8 @@ const getSingleItem = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getAllItems = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items`, {
+const getAllOutfits = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
@@ -32,8 +32,8 @@ const getAllItems = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getItemsByUser = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items?uid=${uid}`, {
+const getOutfitsByUser = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits?uid=${uid}`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
@@ -50,26 +50,8 @@ const getItemsByUser = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getItemsByUserCategory = (uid, categoryId) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items?uid=${uid}&category=${categoryId}`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data) {
-        resolve(Object.values(data));
-      } else {
-        resolve([]);
-      }
-    })
-    .catch(reject);
-});
-
-const deleteItem = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items/${id}`, {
+const deleteOutfit = (id) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -79,8 +61,8 @@ const deleteItem = (id) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const createItem = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items`, {
+const createOutfit = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -92,8 +74,8 @@ const createItem = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const updateItem = (payload) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/items/${payload.id}`, {
+const updateOutfit = (payload) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits/${payload.id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -105,5 +87,5 @@ const updateItem = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getSingleItem, getAllItems, getItemsByUser, getItemsByUserCategory, deleteItem, createItem, updateItem,
+  getSingleOutfit, getAllOutfits, getOutfitsByUser, deleteOutfit, createOutfit, updateOutfit,
 };
