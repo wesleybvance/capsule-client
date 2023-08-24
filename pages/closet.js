@@ -22,13 +22,14 @@ export default function Closet() {
     getAllCategories().then((data) => setCategories(data));
     if (formSelect.category === 'none') {
       getItemsByUser(user.id).then(setItems);
-    } else if (formSelect.name) {
-      getItemsByCategory(formSelect.id);
+    } else if (formSelect.category) {
+      console.warn(formSelect);
+      getItemsByCategory(formSelect.category);
     } else {
       getItemsByUser(user.id).then(setItems);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formSelect.id]);
+  }, [formSelect.category]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
