@@ -51,8 +51,10 @@ export default function Closet() {
           </FloatingLabel>
         </Form>
       </div>
-      {items ? items.map((item) => (
-        <ItemCard key={item.id} name={item.name} categoryId={item.category_id} photoUrl={item.photo_url} />)) : 'You have no items'}
+      <div className="rflex">
+        {items ? items.map((item) => (
+          <ItemCard key={item.id} name={item.name} categoryId={item.category_id} photoUrl={item.photo_url} />)) : 'You have no items'}
+      </div>
     </div>
   );
 }

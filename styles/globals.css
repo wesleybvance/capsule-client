@@ -24,3 +24,29 @@ body {
 .smallplease {
   max-height: 100px;
 }
+
+.width100 {
+  max-width: 100px;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.outfit-item-card-body {
+  padding: 5px;
+}
+
+.cflex {
+  display: flex;
+  flex-direction: column;
+}
+
+.rflex {
+  display: flex;
+  flex-direction: row;
+}
+
+.margin5 {
+  margin: 5px;
+}

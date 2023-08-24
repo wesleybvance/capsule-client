@@ -33,7 +33,7 @@ const getAllOutfits = () => new Promise((resolve, reject) => {
 });
 
 const getOutfitItemsByOutfitID = (id) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/outfits_items?outfitId=${id}`, {
+  fetch(`${endpoint}/outfit_items?outfitId=${id}`, {
     method: 'GET',
     headers: {
       'content-type': 'application/json',
