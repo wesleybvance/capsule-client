@@ -21,8 +21,10 @@ export default function OutfitCard({
     <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        {outfitItems ? outfitItems.map((oitem) => (
-          <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
+        <div className="rflex">
+          {outfitItems ? outfitItems.map((oitem) => (
+            <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
+        </div>
       </Card.Body>
     </Card>
   );

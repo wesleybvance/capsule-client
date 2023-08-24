@@ -13,10 +13,12 @@ export default function AllOutfits() {
 
   useEffect(() => {
     getUserOutfits(user.id);
+    console.warn(outfits);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   return (
-    <div>
+    <div className="rflex">
       {outfits ? outfits.map((outfit) => (
         <OutfitCard key={outfit.id} name={outfit.name} oid={outfit.id} />)) : 'You have no Outfits'}
     </div>
