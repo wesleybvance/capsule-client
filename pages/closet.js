@@ -18,6 +18,10 @@ export default function Closet() {
     getItemsByUserCategory(user.id, categoryId).then(setItems);
   };
 
+  const getItemsAgain = () => {
+    getItemsByUser(user.id).then(setItems);
+  };
+
   useEffect(() => {
     getAllCategories().then((data) => setCategories(data));
     if (formSelect.category === 'none') {
@@ -53,7 +57,7 @@ export default function Closet() {
       </div>
       <div className="rflex">
         {items ? items.map((item) => (
-          <ItemCard key={item.id} name={item.name} categoryId={item.category_id} photoUrl={item.photo_url} />)) : 'You have no items'}
+          <ItemCard key={item.id} iid={item.id} name={item.name} categoryId={item.category_id} photoUrl={item.photo_url} onUpdate={getItemsAgain} />)) : 'You have no items'}
       </div>
     </div>
   );
