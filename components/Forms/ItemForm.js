@@ -32,7 +32,7 @@ export default function ItemForm({ currentItem }) {
     if (currentItem.id) {
       setFormInput({
         id: currentItem.id,
-        userId: currentItem.user_id.id,
+        uid: currentItem.uid.id,
         categoryId: currentItem.category_id.id,
         photoUrl: currentItem.photo_url,
         name: currentItem.name,
@@ -46,6 +46,7 @@ export default function ItemForm({ currentItem }) {
       ...prevState,
       [name]: value,
     }));
+    console.warn(formInput);
   };
 
   const handleSubmit = (e) => {
@@ -53,7 +54,8 @@ export default function ItemForm({ currentItem }) {
     if (currentItem.id) {
       updateItem(formInput).then(() => router.push('/closet'));
     } else {
-      const payload = { ...formInput, userId: user.id };
+      const payload = { ...formInput, uid: user.id };
+      console.warn(payload);
       createItem(payload).then(router.push('/closet'));
     }
   };
@@ -62,9 +64,9 @@ export default function ItemForm({ currentItem }) {
     <div>
       <Form onSubmit={handleSubmit}>
         <FloatingLabel controlId="floatingInput" label="Item Name" className="mt-4">
-          <Form.Control type="text" placeholder="" name="name" />
+          <Form.Control onChange={handleChange} type="text" placeholder="" name="name" />
         </FloatingLabel>
-        <Form.Select onChange={handleChange} className="mt-4" aria-label="">
+        <Form.Select name="categoryId" onChange={handleChange} className="mt-4" aria-label="">
           <option>Select a Category</option>
           {categories ? categories.map((category) => (<CategorySelect key={category.id} id={category.id} name={category.name} />)) : (<option>No Categories Available</option>)}
         </Form.Select>
@@ -85,7 +87,7 @@ ItemForm.propTypes = {
       id: PropTypes.number,
     }),
     photo_url: PropTypes.string,
-    user_id: PropTypes.shape({
+    uid: PropTypes.shape({
       id: PropTypes.number,
     }),
   }),
