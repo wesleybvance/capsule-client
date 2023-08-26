@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import { Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -13,5 +14,5 @@ export default function OutfitItemCard({ itid }) {
 }
 
 OutfitItemCard.propTypes = {
-  itid: PropTypes.shape.isRequired,
+  itid: PropTypes.object.isRequired,
 };

@@ -27,28 +27,28 @@ function RegisterForm({ user, updateUser }) {
         label="First Name"
         className="mt-3"
       >
-        <Form.Control type="text" placeholder="Cher" name="firstName" />
+        <Form.Control type="text" placeholder="Cher" name="firstName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
       </FloatingLabel>
       <FloatingLabel
         controlId="floatingTextarea"
         label="Last Name"
         className="mt-3"
       >
-        <Form.Control type="text" placeholder="Horowitz" name="lastName" />
+        <Form.Control type="text" placeholder="Horowitz" name="lastName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
       </FloatingLabel>
       <FloatingLabel
         controlId="floatingInput"
         label="Email Address"
         className="mt-3"
       >
-        <Form.Control type="email" name="email" placeholder="name@example.com" />
+        <Form.Control type="email" name="email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="name@example.com" />
       </FloatingLabel>
       <FloatingLabel
         controlId="floatingTextarea"
         label="Profile Picture URL"
         className="mt-3"
       >
-        <Form.Control type="text" placeholder="" name="profileImage" />
+        <Form.Control type="text" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="" name="profileImage" />
       </FloatingLabel>
       <Button variant="primary" type="submit" className="mt-3">
         Submit
