@@ -46,7 +46,6 @@ export default function ItemForm({ currentItem }) {
       ...prevState,
       [name]: value,
     }));
-    console.warn(formInput);
   };
 
   const handleSubmit = (e) => {
