@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import ItemSelect from '../Items/ItemSelect';
+import ItemSelect from '../Items/OutfitItemSelect';
 import { useAuth } from '../../utils/context/authContext';
 import { createOutfit } from '../../utils/data/outfitData';
 import { createOutfitItem } from '../../utils/data/outfitItemData';
@@ -11,7 +11,7 @@ const initialState = {
   userId: 0,
 };
 
-export default function OutfitItemForm() {
+export default function OutfitForm() {
   const { user } = useAuth();
   const router = useRouter();
   const [formInput, setFormInput] = useState(initialState);
@@ -94,9 +94,6 @@ export default function OutfitItemForm() {
         <ItemSelect id="outfitItem3" categoryId={3} handleChange={handleSelectChange} value={outfitItemValues.outfitItem3} />
         <ItemSelect id="outfitItem4" categoryId={4} handleChange={handleSelectChange} value={outfitItemValues.outfitItem4} />
         <ItemSelect id="outfitItem5" categoryId={5} handleChange={handleSelectChange} value={outfitItemValues.outfitItem5} />
-        {/* <div>
-          {categories ? (categories.map((category) => (<ItemSelect key={`select--${category.id}`} category={category} />))) : ''}
-        </div> */}
         <Button variant="light" className="btn-outline-dark mt-4" type="submit">Create Outfit</Button>
       </Form>
     </div>

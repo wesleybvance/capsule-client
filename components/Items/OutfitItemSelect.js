@@ -7,7 +7,7 @@ import { useAuth } from '../../utils/context/authContext';
 import { getItemsByUserCategory } from '../../utils/data/itemData';
 import { getSingleCategory } from '../../utils/data/categoryData';
 
-export default function ItemSelect({
+export default function OutfitItemSelect({
   id, value, categoryId, handleChange,
 }) {
   const [category, setCategory] = useState({});
@@ -28,16 +28,6 @@ export default function ItemSelect({
     getCategoryItems(categoryId);
   }, [categoryId]);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (currentOutfitItem.id) {
-  //     updateOutfitItem(formInput).then(router.push('/outfits/all)'));
-  //   } else {
-  //     const payload = { ...formInput, outfitId: oid };
-  //     createOutfitItem(payload);
-  //   }
-  // };
-
   return (
     <div>
       <FloatingLabel controlId="floatingSelect" label={category.name}>
@@ -50,7 +40,7 @@ export default function ItemSelect({
   );
 }
 
-ItemSelect.propTypes = {
+OutfitItemSelect.propTypes = {
   categoryId: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
