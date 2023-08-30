@@ -16,11 +16,11 @@ export default function OutfitForm() {
   const router = useRouter();
   const [formInput, setFormInput] = useState(initialState);
   const [outfitItemValues, setOutfitItemValues] = useState({
-    outfitItem1: '',
-    outfitItem2: '',
-    outfitItem3: '',
-    outfitItem4: '',
-    outfitItem5: '',
+    outfitItem1: 0,
+    outfitItem2: 0,
+    outfitItem3: 0,
+    outfitItem4: 0,
+    outfitItem5: 0,
   });
 
   const handleSelectChange = (id, selectedValue) => {
@@ -28,6 +28,7 @@ export default function OutfitForm() {
       ...prevValues,
       [id]: selectedValue,
     }));
+    console.warn(selectedValue);
   };
 
   const handleSubmit = (e) => {
@@ -87,7 +88,7 @@ export default function OutfitForm() {
           label="Outfit Name"
           className="mt-3"
         >
-          <Form.Control type="text" placeholder="Shopping at the Mall" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
+          <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
         </FloatingLabel>
         <ItemSelect id="outfitItem1" categoryId={1} handleChange={handleSelectChange} value={outfitItemValues.outfitItem1} />
         <ItemSelect id="outfitItem2" categoryId={2} handleChange={handleSelectChange} value={outfitItemValues.outfitItem2} />

@@ -19,11 +19,11 @@ export default function EditOutfitForm({ outfitId }) {
   const [outfit, setOutfit] = useState({});
   const [outfitItems, setOutfitItems] = useState([]);
   const [outfitItemValues, setOutfitItemValues] = useState({
-    outfitItem1: '',
-    outfitItem2: '',
-    outfitItem3: '',
-    outfitItem4: '',
-    outfitItem5: '',
+    outfitItem1: 0,
+    outfitItem2: 0,
+    outfitItem3: 0,
+    outfitItem4: 0,
+    outfitItem5: 0,
   });
 
   const getOutfit = (id) => {
