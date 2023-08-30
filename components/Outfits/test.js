@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import OutfitItemSelect from '../Items/OutfitItemSelect';
+import { updateOutfit } from '../../utils/data/outfitData';
+import { createOutfitItem, updateOutfitItem } from '../../utils/data/outfitItemData';
 
 const initialOutfitState = {
   name: '',
@@ -78,6 +80,7 @@ export default function UpdateTest({ outfit, outfitItems }) {
       setOutfitInput({
         name: outfit.name,
         userId: user.id,
+        id: outfit.id,
       });
     }
     if (outfitItems) {
@@ -111,20 +114,76 @@ export default function UpdateTest({ outfit, outfitItems }) {
     }
   }, [outfit.id, user.id, outfit.name, outfitItems]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    updateOutfit(outfitInput);
+    if (outfitItems) {
+      outfitItems.forEach((outfitItem) => {
+        if (outfitItem.item_id.category_id === 1) {
+          updateOutfitItem(item1Input);
+        } else if (item1Input) {
+          const payload = {
+            outfitId: outfit.id,
+            itemId: item1Input.itemId,
+          };
+          createOutfitItem(payload);
+        }
+        if (outfitItem.item_id.category_id.id === 2) {
+          updateOutfitItem(item2Input);
+        } else if (item2Input) {
+          const payload = {
+            outfitId: outfit.id,
+            itemId: item2Input.itemId,
+          };
+          createOutfitItem(payload);
+        }
+        if (outfitItem.item_id.category_id.id === 3) {
+          updateOutfitItem(item3Input);
+        } else if (item3Input) {
+          const payload = {
+            outfitId: outfit.id,
+            itemId: item3Input.itemId,
+          };
+          createOutfitItem(payload);
+        }
+        if (outfitItem.item_id.category_id.id === 4) {
+          updateOutfitItem(item4Input);
+        } else if (item1Input) {
+          const payload = {
+            outfitId: outfit.id,
+            itemId: item4Input.itemId,
+          };
+          createOutfitItem(payload);
+        }
+        if (outfitItem.item_id.category_id.id === 5) {
+          updateOutfitItem(item5Input);
+        } else if (item5Input) {
+          const payload = {
+            outfitId: outfit.id,
+            itemId: item5Input.itemId,
+          };
+          createOutfitItem(payload);
+        }
+      });
+    }
+  };
+
   return (
     <div>
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="Outfit Name"
-        className="mt-3"
-      >
-        <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={handleOutfitChange} value={outfitInput.name} />
-      </FloatingLabel>
-      <OutfitItemSelect id="itemId" name="itemId" value={item1Input.itemId} categoryId={1} handleChange={handleSelect1Change} />
-      <OutfitItemSelect id="itemId" name="itemId" value={item2Input.itemId} categoryId={2} handleChange={handleSelect2Change} />
-      <OutfitItemSelect id="itemId" name="itemId" value={item3Input.itemId} categoryId={3} handleChange={handleSelect3Change} />
-      <OutfitItemSelect id="itemId" name="itemId" value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
-      <OutfitItemSelect id="itemId" name="itemId" value={item5Input.itemId} categoryId={5} handleChange={handleSelect5Change} />
+      <Form onSubmit={handleSubmit}>
+        <FloatingLabel
+          controlId="floatingTextarea"
+          label="Outfit Name"
+          className="mt-3"
+        >
+          <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={handleOutfitChange} value={outfitInput.name} />
+        </FloatingLabel>
+        <OutfitItemSelect id="itemId" name="itemId" value={item1Input.itemId} categoryId={1} handleChange={handleSelect1Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item2Input.itemId} categoryId={2} handleChange={handleSelect2Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item3Input.itemId} categoryId={3} handleChange={handleSelect3Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item5Input.itemId} categoryId={5} handleChange={handleSelect5Change} />
+      </Form>
     </div>
   );
 }
