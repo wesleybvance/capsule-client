@@ -4,7 +4,7 @@ import { FloatingLabel, Form } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import OutfitItemSelect from '../Items/OutfitItemSelect';
 import { updateOutfit } from '../../utils/data/outfitData';
-import { createOutfitItem, updateOutfitItem } from '../../utils/data/outfitItemData';
+import { updateOutfitItem } from '../../utils/data/outfitItemData';
 
 const initialOutfitState = {
   name: '',
@@ -114,6 +114,16 @@ export default function UpdateTest({ outfit, outfitItems }) {
     }
   }, [outfit.id, user.id, outfit.name, outfitItems]);
 
+  // if (outfitItem.item_id.category_id.id === 2) {
+  //   updateOutfitItem(item2Input);
+  // } else if (item2Input) {
+  //   const payload = {
+  //     outfitId: outfit.id,
+  //     itemId: item2Input.itemId,
+  //   };
+  //   createOutfitItem(payload);
+  // }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     updateOutfit(outfitInput);
@@ -121,48 +131,18 @@ export default function UpdateTest({ outfit, outfitItems }) {
       outfitItems.forEach((outfitItem) => {
         if (outfitItem.item_id.category_id === 1) {
           updateOutfitItem(item1Input);
-        } else if (item1Input) {
-          const payload = {
-            outfitId: outfit.id,
-            itemId: item1Input.itemId,
-          };
-          createOutfitItem(payload);
         }
         if (outfitItem.item_id.category_id.id === 2) {
           updateOutfitItem(item2Input);
-        } else if (item2Input) {
-          const payload = {
-            outfitId: outfit.id,
-            itemId: item2Input.itemId,
-          };
-          createOutfitItem(payload);
         }
         if (outfitItem.item_id.category_id.id === 3) {
           updateOutfitItem(item3Input);
-        } else if (item3Input) {
-          const payload = {
-            outfitId: outfit.id,
-            itemId: item3Input.itemId,
-          };
-          createOutfitItem(payload);
         }
         if (outfitItem.item_id.category_id.id === 4) {
           updateOutfitItem(item4Input);
-        } else if (item1Input) {
-          const payload = {
-            outfitId: outfit.id,
-            itemId: item4Input.itemId,
-          };
-          createOutfitItem(payload);
         }
         if (outfitItem.item_id.category_id.id === 5) {
           updateOutfitItem(item5Input);
-        } else if (item5Input) {
-          const payload = {
-            outfitId: outfit.id,
-            itemId: item5Input.itemId,
-          };
-          createOutfitItem(payload);
         }
       });
     }
