@@ -14,7 +14,7 @@ const initialOutfitState = {
   userId: 0,
 };
 
-export default function UpdateTest({ outfit, outfitItems }) {
+export default function UpdateOutfitForm({ outfit, outfitItems }) {
   const [outfitInput, setOutfitInput] = useState(initialOutfitState);
   const [item1Input, setItem1Input] = useState({
     itemId: 0,
@@ -382,7 +382,7 @@ export default function UpdateTest({ outfit, outfitItems }) {
   );
 }
 
-UpdateTest.propTypes = {
+UpdateOutfitForm.propTypes = {
   outfit: PropTypes.shape({
     name: PropTypes.string,
     id: PropTypes.number,
@@ -392,7 +392,7 @@ UpdateTest.propTypes = {
   outfitItems: PropTypes.array,
 };
 
-UpdateTest.defaultProps = {
+UpdateOutfitForm.defaultProps = {
   outfit: initialOutfitState,
   outfitItems: [],
 };
