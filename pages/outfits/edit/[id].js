@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 // import EditOutfitForm from '../../../components/Forms/EditOutfitForm';
 import { getSingleOutfit } from '../../../utils/data/outfitData';
 import { getOutfitItemsByOutfitID } from '../../../utils/data/outfitItemData';
-import UpdateOutfitForm from '../../../components/Outfits/UpdateOutfitForm';
+import UpdateOutfitForm from '../../../components/Forms/UpdateOutfitForm';
 
 export default function EditOutfit() {
   const router = useRouter();
@@ -28,7 +28,6 @@ export default function EditOutfit() {
 
   return (
     <div>
-      {/* <EditOutfitForm outfitId={Number(router.query.id)} /> */}
       <UpdateOutfitForm outfit={outfit} outfitItems={outfitItems} />
     </div>
   );
