@@ -32,7 +32,7 @@ export default function OutfitItemSelect({
     <div>
       <FloatingLabel controlId="floatingSelect" label={category.name}>
         <Form.Select value={value} onChange={(e) => handleChange(id, e.target.value)} className="mt-4" aria-label="">
-          <option>None</option>
+          <option value={0}>None</option>
           {items ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
         </Form.Select>
       </FloatingLabel>

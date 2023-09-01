@@ -23,7 +23,6 @@ export default function EditOutfit() {
   useEffect(() => {
     getOutfitInfo(outfitId);
     getOutfitItemInfo(outfitId);
-    console.warn(outfitItems);
   }, [outfitId]);
 
   return (
