@@ -7,7 +7,7 @@ import { useAuth } from '../../utils/context/authContext';
 import { getItemsByUserCategory } from '../../utils/data/itemData';
 import { getSingleCategory } from '../../utils/data/categoryData';
 
-export default function ItemSelect({
+export default function OutfitItemSelect({
   id, value, categoryId, handleChange,
 }) {
   const [category, setCategory] = useState({});
@@ -28,31 +28,21 @@ export default function ItemSelect({
     getCategoryItems(categoryId);
   }, [categoryId]);
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (currentOutfitItem.id) {
-  //     updateOutfitItem(formInput).then(router.push('/outfits/all)'));
-  //   } else {
-  //     const payload = { ...formInput, outfitId: oid };
-  //     createOutfitItem(payload);
-  //   }
-  // };
-
   return (
     <div>
       <FloatingLabel controlId="floatingSelect" label={category.name}>
         <Form.Select value={value} onChange={(e) => handleChange(id, e.target.value)} className="mt-4" aria-label="">
-          <option>None</option>
-          {items ? items.map((item) => (<option key={`item--${item.id}`} value={item.id}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
+          <option value={0}>None</option>
+          {items ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
         </Form.Select>
       </FloatingLabel>
     </div>
   );
 }
 
-ItemSelect.propTypes = {
+OutfitItemSelect.propTypes = {
   categoryId: PropTypes.number.isRequired,
   handleChange: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
 };
