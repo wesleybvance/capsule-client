@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
@@ -23,22 +24,19 @@ export default function ItemForm({ currentItem }) {
   const { user } = useAuth();
   const router = useRouter();
 
-  // if (router.query) {
-  //   initialState.categoryId = router.query.category_id;
-  // }
-
   useEffect(() => {
     getAllCategories().then(setCategories);
     if (currentItem.id) {
+      console.warn(currentItem);
       setFormInput({
         id: currentItem.id,
-        uid: currentItem.uid.id,
-        categoryId: currentItem.category_id.id,
+        userId: user.id,
+        categoryId: currentItem.category_id,
         photoUrl: currentItem.photo_url,
         name: currentItem.name,
       });
     }
-  }, [currentItem, user]);
+  }, [currentItem]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,14 +61,14 @@ export default function ItemForm({ currentItem }) {
     <div>
       <Form onSubmit={handleSubmit}>
         <FloatingLabel controlId="floatingInput" label="Item Name" className="mt-4">
-          <Form.Control onChange={handleChange} type="text" placeholder="" name="name" />
+          <Form.Control value={formInput.name} onChange={handleChange} type="text" placeholder="" name="name" />
         </FloatingLabel>
-        <Form.Select name="categoryId" onChange={handleChange} className="mt-4" aria-label="">
+        <Form.Select value={formInput.categoryId} name="categoryId" onChange={handleChange} className="mt-4" aria-label="">
           <option>Select a Category</option>
           {categories ? categories.map((category) => (<CategorySelect key={category.id} id={category.id} name={category.name} />)) : (<option>No Categories Available</option>)}
         </Form.Select>
         <FloatingLabel controlId="floatingInput" label="Photo URL" className="mt-4">
-          <Form.Control onChange={handleChange} type="text" placeholder="" name="photoUrl" />
+          <Form.Control value={formInput.photoUrl} onChange={handleChange} type="text" placeholder="" name="photoUrl" />
         </FloatingLabel>
         <Button variant="light" className="btn-outline-dark" type="submit">{currentItem.id ? 'Update' : 'Create'} Item</Button>
       </Form>
@@ -82,9 +80,7 @@ ItemForm.propTypes = {
   currentItem: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
-    category_id: PropTypes.shape({
-      id: PropTypes.number,
-    }),
+    category_id: PropTypes.number,
     photo_url: PropTypes.string,
     uid: PropTypes.shape({
       id: PropTypes.number,

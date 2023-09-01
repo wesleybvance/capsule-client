@@ -40,9 +40,21 @@ body {
 .cflex {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.cflexnowrap {
+  display: flex;
+  flex-direction: column;
 }
 
 .rflex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.rflexnowrap {
   display: flex;
   flex-direction: row;
 }
