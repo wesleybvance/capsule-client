@@ -32,11 +32,11 @@ export default function OutfitCard({
       <Button variant="light" className="btn btn-outline-danger" onClick={deleteThisOutfit}>x</Button>
       <Card.Body>
         <Card.Title>{name}</Card.Title>
-        <div className="rflex">
+        <div className="rflexnowrap">
           {outfitItems ? outfitItems.map((oitem) => (
             <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
         </div>
-        <Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">Edit Outfit</Button>
+        <Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">edit</Button>
       </Card.Body>
     </Card>
   );
