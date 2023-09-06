@@ -1,16 +1,17 @@
-# React/Next.js Django Auth Template
+# Capsule Readme
 
 ## Topics
 - [Get Started](#getting-started)
 - [Starting the Project](#starting-the-project)
 ___
-## Getting Started
-### Use Template
-#### 1. To get started, click the GREEN "Use this Template" button at the top of the repo
-<img width="915" alt="Screen Shot 2022-07-06 at 12 54 01 PM" src="https://user-images.githubusercontent.com/29741570/177612998-4aac9237-5a1e-4f13-8ae0-468587521564.png">
+## UpdateOufit Form
+<img width="1004" alt="Screen Shot 2023-09-05 at 9 58 07 PM" src="https://github.com/wesleybvance/capsule-client/assets/114395244/11a3abf4-4512-4be4-9ea8-ec63942c02df">
 
-#### 2. Make sure YOUR github account is selected in the dropdown and name your project
-<img width="763" alt="Screen Shot 2022-07-06 at 12 54 48 PM" src="https://user-images.githubusercontent.com/29741570/177613126-dd38f678-7553-4f27-8a4a-75680f14d71e.png">
+## OutfitItem Selector
+<img width="1043" alt="Screen Shot 2023-09-05 at 9 59 25 PM" src="https://github.com/wesleybvance/capsule-client/assets/114395244/dfd5d1ed-7495-48fb-bfd2-c99aa33d5ff5">
+
+
+
 
 #### 3. Clone your new repo to your local machine
 #### 4. Go to the **NEXT** section
