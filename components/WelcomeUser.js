@@ -9,6 +9,7 @@ export default function WelcomeUser() {
   const [show, setShow] = useState(true);
   const toggleShow = () => {
     setShow(!show);
+    console.warn(user);
   };
   const logTime = user.fbUser.metadata.lastSignInTime;
   const newTime = logTime.substr(0, 16);
@@ -17,7 +18,7 @@ export default function WelcomeUser() {
     <div className="cflex cleft">
       <Toast className="toast m-4" show={show} onClose={toggleShow}>
         <Toast.Header>
-          <Image width="20" height="20" src="https://i.pinimg.com/564x/9f/df/0a/9fdf0a8ec678e137a49a47c980bf48d5.jpg" />
+          <Image width="20" height="20" src={user.profile_image} />
           <strong className="me-auto m-2">capsule</strong>
           <small>last login: {newTime}</small>
         </Toast.Header>
