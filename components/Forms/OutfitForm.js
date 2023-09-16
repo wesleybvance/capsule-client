@@ -33,7 +33,6 @@ export default function OutfitForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.warn(outfitItemValues);
     const outfitPayload = {
       name: formInput.name,
       userId: user.id,
