@@ -62,3 +62,26 @@ body {
 .margin5 {
   margin: 5px;
 }
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.cleft {
+  align-items: start;
+}
+
+.cright {
+  align-items: end;
+}
+
+.toast {
+  position: absolute;
+}
+
+.toast-btn {
+  background-color: #D9D9D9;
+  color: rgb(157, 156, 156);
+  border: none;
+};

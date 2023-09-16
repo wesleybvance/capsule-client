@@ -53,7 +53,7 @@ export default function ItemForm({ currentItem }) {
     } else {
       const payload = { ...formInput, uid: user.id };
       console.warn(payload);
-      createItem(payload).then(router.push('/closet'));
+      createItem(payload).then(router.replace('/closet'));
     }
   };
 
