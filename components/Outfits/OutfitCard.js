@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { getOutfitItemsByOutfitID } from '../../utils/data/outfitItemData';
 import OutfitItemCard from './OutfitItemCard';
 import { deleteOutfit } from '../../utils/data/outfitData';
@@ -31,7 +32,7 @@ export default function OutfitCard({
     <Card style={{ width: '18rem' }}>
       <Button variant="light" className="btn btn-outline-danger" onClick={deleteThisOutfit}>x</Button>
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
         <div className="rflexnowrap">
           {outfitItems ? outfitItems.map((oitem) => (
             <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
