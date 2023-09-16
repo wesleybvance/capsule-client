@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, CloseButton } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { getSingleCategory } from '../../utils/data/categoryData';
@@ -27,7 +27,7 @@ export default function ItemCard({
   }, [categoryId]);
   return (
     <Card style={{ width: '18rem' }}>
-      <Button variant="light" className="btn btn-outline-danger" onClick={deleteThisItem}>x</Button>
+      <CloseButton variant="light" className="m-2 btn btn-outline-danger" onClick={deleteThisItem} />
       <Card.Img variant="top" src={photoUrl} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

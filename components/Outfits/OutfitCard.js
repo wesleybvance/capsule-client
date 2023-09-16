@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, CloseButton } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -29,15 +29,16 @@ export default function OutfitCard({
   }, [oid]);
 
   return (
-    <Card style={{ width: '18rem' }}>
-      <Button variant="light" className="btn btn-outline-danger" onClick={deleteThisOutfit}>x</Button>
+    <Card style={{ width: '40rem' }}>
+      <CloseButton variant="light" className="btn btn-outline-danger" onClick={deleteThisOutfit} />
       <Card.Body>
         <Card.Title><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
-        <div className="rflexnowrap">
+        <div className="rflexnowrap center">
           {outfitItems ? outfitItems.map((oitem) => (
             <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
         </div>
-        <Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">edit</Button>
+        <div className="cflex"><Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">edit</Button>
+        </div>
       </Card.Body>
     </Card>
   );

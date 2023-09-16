@@ -17,7 +17,7 @@ export default function AllOutfits() {
   }, [user]);
 
   return (
-    <div className="rflex">
+    <div className="cflex">
       {outfits ? outfits.map((outfit) => (
         <OutfitCard key={outfit.id} name={outfit.name} oid={outfit.id} onUpdate={getUserOutfits} />)) : 'You have no Outfits'}
     </div>
