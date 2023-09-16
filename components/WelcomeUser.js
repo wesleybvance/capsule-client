@@ -9,7 +9,6 @@ export default function WelcomeUser() {
   const [show, setShow] = useState(true);
   const toggleShow = () => {
     setShow(!show);
-    console.warn(user);
   };
   const logTime = user.fbUser.metadata.lastSignInTime;
   const newTime = logTime.substr(0, 16);
@@ -22,7 +21,7 @@ export default function WelcomeUser() {
           <strong className="me-auto m-2">capsule</strong>
           <small>last login: {newTime}</small>
         </Toast.Header>
-        <Toast.Body>Welcome, {user.fbUser.displayName}! :) </Toast.Body>
+        <Toast.Body>Welcome, {user.first_name} {user.last_name}! :) </Toast.Body>
       </Toast>
       <Button onClick={toggleShow} className="mb-5 toast-btn" variant="light">☆</Button>
     </div>

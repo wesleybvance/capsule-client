@@ -1,0 +1,44 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react';
+import { Carousel, Image } from 'react-bootstrap';
+import { useAuth } from '../../utils/context/authContext';
+import { getItemsByUser } from '../../utils/data/itemData';
+
+export default function TestSelect() {
+  const [index, setIndex] = useState(0);
+  const [items, setItems] = useState([]);
+  const { user } = useAuth();
+
+  const getItems = () => {
+    getItemsByUser(user.id).then(setItems);
+  };
+
+  useEffect(() => {
+    getItems();
+  }, [user]);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+    console.warn(index);
+    console.warn(items);
+  };
+
+  return (
+    <div>
+      <Carousel variant="dark" className="carousel" slide activeIndex={index} onSelect={handleSelect}>
+        {items ? items.map((item) => (
+          <Carousel.Item className="text-center" key={`item--${item.id}`}>
+            <Image
+              className="caropic"
+              src={item.photo_url}
+              alt={item.name}
+            />
+            <Carousel.Caption>
+              <p>{item.name}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        )) : ''}
+      </Carousel>
+    </div>
+  );
+}
