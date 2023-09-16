@@ -26,8 +26,9 @@ export default function TestSelect() {
   return (
     <div>
       <Carousel variant="dark" className="carousel" slide activeIndex={index} onSelect={handleSelect}>
-        {items ? items.map((item) => (
-          <Carousel.Item className="text-center" key={`item--${item.id}`}>
+        {items ? items.map((item, selectedIndex) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Carousel.Item className="text-center" key={selectedIndex}>
             <Image
               className="caropic"
               src={item.photo_url}
