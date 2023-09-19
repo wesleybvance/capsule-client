@@ -1,4 +1,4 @@
-import TestSelect from '../components/Items/TestSelect';
+import OutfitFormTest from '../components/Forms/OutfitFormTest';
 import WelcomeUser from '../components/WelcomeUser';
 
 function Home() {
@@ -7,7 +7,7 @@ function Home() {
       className="text-center d-flex flex-column justify-content-center align-content-center"
     >
       <WelcomeUser />
-      <TestSelect />
+      <OutfitFormTest />
     </div>
   );
 }

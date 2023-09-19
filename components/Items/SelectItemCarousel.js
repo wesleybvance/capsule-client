@@ -4,7 +4,7 @@ import { Carousel, Image } from 'react-bootstrap';
 import { useAuth } from '../../utils/context/authContext';
 import { getItemsByUser } from '../../utils/data/itemData';
 
-export default function TestSelect() {
+export default function SelectItemCarousel() {
   const [index, setIndex] = useState(0);
   const [items, setItems] = useState([]);
   const { user } = useAuth();
@@ -19,8 +19,6 @@ export default function TestSelect() {
 
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
-    console.warn(index);
-    console.warn(items);
   };
 
   return (

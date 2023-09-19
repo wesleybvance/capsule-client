@@ -30,7 +30,7 @@ export default function OutfitCard({
 
   return (
     <Card style={{ width: '40rem' }}>
-      <CloseButton variant="light" className="btn btn-outline-danger" onClick={deleteThisOutfit} />
+      <CloseButton variant="white" className="btn btn-outline-danger" onClick={deleteThisOutfit} />
       <Card.Body>
         <Card.Title><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
         <div className="rflexnowrap center">

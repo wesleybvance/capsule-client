@@ -38,6 +38,8 @@ body {
 .carousel {
   width: 400px;
   background-color: #D9D9D9;
+  align-self: center;
+  justify-self: center;
 }
 
 .small-text {
@@ -46,6 +48,12 @@ body {
 
 .outfit-item-card-body {
   padding: 5px;
+}
+
+.item-dropd {
+  width: 400px;
+  align-self: center;
+  justify-self: center;
 }
 
 .cflex {
@@ -96,3 +104,12 @@ body {
   color: rgb(157, 156, 156);
   border: none;
 };
+
+.centered {
+  justify-self: center;
+  align-self: center;
+}
+
+.flex {
+  display: flex;
+}
