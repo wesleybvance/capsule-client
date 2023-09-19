@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import { Button, FloatingLabel, Form } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 import { useAuth } from '../../utils/context/authContext';
+import OutfitItemSelect from '../Items/OutfitItemSelect';
 import { updateOutfit } from '../../utils/data/outfitData';
 import { createOutfitItem, deleteOutfitItem, updateOutfitItem } from '../../utils/data/outfitItemData';
-import SelectItemCarousel from '../Items/SelectItemCarousel';
 
 const initialOutfitState = {
   name: '',
@@ -14,7 +14,7 @@ const initialOutfitState = {
   userId: 0,
 };
 
-export default function UpdateOutfitForm({ outfit, outfitItems }) {
+export default function UpdateOutfitFormOld({ outfit, outfitItems }) {
   const [outfitInput, setOutfitInput] = useState(initialOutfitState);
   const [item1Input, setItem1Input] = useState({
     itemId: 0,
@@ -306,24 +306,29 @@ export default function UpdateOutfitForm({ outfit, outfitItems }) {
         >
           <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={handleOutfitChange} value={outfitInput.name} />
         </FloatingLabel>
-        <div className="rflex">
+        {/* <div className="rflex">
           <div className="cflex">
-            <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item5Input.itemId} value={item5Input.itemId} categoryId={5} handleChange={handleSelect5Change} />
-            <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item3Input.itemId} value={item3Input.itemId} categoryId={3} handleChange={handleSelect3Change} />
+            <SelectItemCarousel id="itemId" name="itemId" value={item5Input.itemId} categoryId={5} handleChange={handleSelect5Change} />
+            <SelectItemCarousel id="itemId" name="itemId" value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
           </div>
           <div className="cflex">
-            <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item1Input.itemId} value={item1Input.itemId} categoryId={1} handleChange={handleSelect1Change} />
-            <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item2Input.itemId} value={item2Input.itemId} categoryId={2} handleChange={handleSelect2Change} />
-            <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item4Input.itemId} value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
+            <SelectItemCarousel id="itemId" name="itemId" value={item1Input.itemId} categoryId={1} handleChange={handleSelect1Change} />
+            <SelectItemCarousel id="itemId" name="itemId" value={item2Input.itemId} categoryId={2} handleChange={handleSelect2Change} />
+            <SelectItemCarousel id="itemId" name="itemId" value={item3Input.itemId} categoryId={3} handleChange={handleSelect3Change} />
           </div>
-        </div>
+        </div> */}
+        <OutfitItemSelect id="itemId" name="itemId" value={item1Input.itemId} categoryId={1} handleChange={handleSelect1Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item2Input.itemId} categoryId={2} handleChange={handleSelect2Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item3Input.itemId} categoryId={3} handleChange={handleSelect3Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
+        <OutfitItemSelect id="itemId" name="itemId" value={item5Input.itemId} categoryId={5} handleChange={handleSelect5Change} />
         <Button variant="light" className="btn-outline-dark mt-4" type="submit">Update Outfit</Button>
       </Form>
     </div>
   );
 }
 
-UpdateOutfitForm.propTypes = {
+UpdateOutfitFormOld.propTypes = {
   outfit: PropTypes.shape({
     name: PropTypes.string,
     id: PropTypes.number,
@@ -333,7 +338,7 @@ UpdateOutfitForm.propTypes = {
   outfitItems: PropTypes.array,
 };
 
-UpdateOutfitForm.defaultProps = {
+UpdateOutfitFormOld.defaultProps = {
   outfit: initialOutfitState,
   outfitItems: [],
 };
