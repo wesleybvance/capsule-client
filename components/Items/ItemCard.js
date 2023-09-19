@@ -27,7 +27,7 @@ export default function ItemCard({
   }, [categoryId]);
   return (
     <Card style={{ width: '18rem' }}>
-      <CloseButton variant="light" className="m-2 btn btn-outline-danger" onClick={deleteThisItem} />
+      <CloseButton className="m-2 btn btn-outline-danger" onClick={deleteThisItem} />
       <Card.Img variant="top" src={photoUrl} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>

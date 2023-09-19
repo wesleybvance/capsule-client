@@ -3,6 +3,7 @@ import ItemForm from '../../components/Forms/ItemForm';
 
 export default function NewItem() {
   return (
-    <div><ItemForm /></div>
+    <div><ItemForm />
+    </div>
   );
 }

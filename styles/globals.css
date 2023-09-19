@@ -29,12 +29,31 @@ body {
   max-width: 100px;
 }
 
+.caropic {
+  height: 400px;
+  margin: 0;
+  border: 1px solid black;
+}
+
+.carousel {
+  width: 400px;
+  background-color: #D9D9D9;
+  align-self: center;
+  justify-self: center;
+}
+
 .small-text {
   font-size: 12px;
 }
 
 .outfit-item-card-body {
   padding: 5px;
+}
+
+.item-dropd {
+  width: 400px;
+  align-self: center;
+  justify-self: center;
 }
 
 .cflex {
@@ -85,3 +104,12 @@ body {
   color: rgb(157, 156, 156);
   border: none;
 };
+
+.centered {
+  justify-self: center;
+  align-self: center;
+}
+
+.flex {
+  display: flex;
+}

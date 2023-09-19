@@ -92,12 +92,12 @@ export default function OutfitFormTest() {
         <div className="rflex">
           <div className="cflex">
             <SelectItemCarousel id="outfitItem5" categoryId={5} handleChange={handleSelectChange} value={outfitItemValues.outfitItem5} />
-            <SelectItemCarousel id="outfitItem3" categoryId={3} handleChange={handleSelectChange} value={outfitItemValues.outfitItem3} />
+            <SelectItemCarousel id="outfitItem4" categoryId={4} handleChange={handleSelectChange} value={outfitItemValues.outfitItem4} />
           </div>
           <div className="cflex">
             <SelectItemCarousel id="outfitItem1" categoryId={1} handleChange={handleSelectChange} value={outfitItemValues.outfitItem1} />
             <SelectItemCarouselTest id="outfitItem2" categoryId={2} handleChange={handleSelectChange} value={outfitItemValues.outfitItem2} />
-            <SelectItemCarousel id="outfitItem4" categoryId={4} handleChange={handleSelectChange} value={outfitItemValues.outfitItem4} />
+            <SelectItemCarousel id="outfitItem3" categoryId={3} handleChange={handleSelectChange} value={outfitItemValues.outfitItem3} />
           </div>
         </div>
         <Button variant="light" className="btn-outline-dark mt-4" type="submit">Create Outfit</Button>
