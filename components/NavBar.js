@@ -14,32 +14,34 @@ export default function NavBar() {
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Link passHref href="/">
-          <Navbar.Brand>capsule</Navbar.Brand>
+          <Navbar.Brand className="logo-title">capsule ❊☆✴︎</Navbar.Brand>
         </Link>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
-            <Link passHref href="/">
-              <Nav.Link>home</Nav.Link>
-            </Link>
-            <Link passHref href="/closet">
-              <Nav.Link>closet</Nav.Link>
-            </Link>
-            <Link passHref href="/outfits/new">
-              <Nav.Link>dress me</Nav.Link>
-            </Link>
-            <Link passHref href="/items/new">
-              <Nav.Link>add item</Nav.Link>
-            </Link>
-            <Link passHref href="/outfits/all">
-              <Nav.Link>outfits</Nav.Link>
-            </Link>
-            <Button variant="danger" onClick={signOut}>
-              Sign Out
-            </Button>
-          </Nav>
-        </Navbar.Collapse>
+        <div className="rflex center">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
+              <Link passHref href="/">
+                <Nav.Link className="nav-link">home</Nav.Link>
+              </Link>
+              <Link passHref href="/closet">
+                <Nav.Link className="nav-link">closet</Nav.Link>
+              </Link>
+              <Link passHref href="/outfits/new">
+                <Nav.Link className="nav-link">dress me</Nav.Link>
+              </Link>
+              <Link passHref href="/items/new">
+                <Nav.Link className="nav-link">add item</Nav.Link>
+              </Link>
+              <Link passHref href="/outfits/all">
+                <Nav.Link className="nav-link">outfits</Nav.Link>
+              </Link>
+              <Button variant="danger" className="nav-link" onClick={signOut}>
+                log off
+              </Button>
+            </Nav>
+          </Navbar.Collapse>
+        </div>
       </Container>
     </Navbar>
   );

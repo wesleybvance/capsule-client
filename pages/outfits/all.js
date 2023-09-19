@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useAuth } from '../../utils/context/authContext';
 import { getOutfitsByUser } from '../../utils/data/outfitData';
 import OutfitCard from '../../components/Outfits/OutfitCard';
@@ -18,8 +19,8 @@ export default function AllOutfits() {
 
   return (
     <div className="cflex">
-      {outfits ? outfits.map((outfit) => (
-        <OutfitCard key={outfit.id} name={outfit.name} oid={outfit.id} onUpdate={getUserOutfits} />)) : 'You have no Outfits'}
+      {outfits[0] ? outfits.map((outfit) => (
+        <OutfitCard key={outfit.id} name={outfit.name} oid={outfit.id} onUpdate={getUserOutfits} />)) : (<h3>You have no outfits. Click <Link passHref href="/outfits/new">here</Link> to add a new outfit to your closet!</h3>)}
     </div>
   );
 }

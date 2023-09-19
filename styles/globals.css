@@ -113,3 +113,110 @@ body {
 .flex {
   display: flex;
 }
+/* NAV BAR */
+.logo-title {
+  font-family: 'racing sans one', sans-serif;
+  font-size: 70px;
+}
+
+.nav-link {
+  font-family: 'dm sans';
+  font-size: 20px;
+  margin: 10px;
+  align-self: center;
+  justify-self: center;
+}
+
+.nav-link:hover {
+  color: white;
+  font-family: 'racing sans one';
+  font-size: 28px;
+  margin: 2px;
+}
+
+/* FONTS ❊ ✴︎ ❤︎ ☆ */
+/* archivo, dm sans, quicksand */
+
+.akaya {
+  font-family: 'Akaya Telivigala', cursive;
+}
+.archivo {
+  font-family: 'Archivo', sans-serif;
+}
+.audiowide {
+  font-family: 'Audiowide', cursive;
+}
+.bruno {
+  font-family: 'Bruno Ace', cursive;
+}
+.chango {
+  font-family: 'Chango', cursive;
+}
+.cherry-bomb {
+  font-family: 'Cherry Bomb One', cursive;
+}
+.cute-font {
+  font-family: 'Cute Font', cursive;
+}
+.dm-sans {
+  font-family: 'DM Sans', sans-serif;
+}
+.dot-gothic {
+  font-family: 'DotGothic16', sans-serif;
+}
+.fjalla {
+  font-family: 'Fjalla One', sans-serif;
+}
+.fugaz {
+  font-family: 'Fugaz One', cursive;
+}
+.handjet {
+  font-family: 'Handjet', cursive;
+}
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+.inter-tight {
+  font-family: 'Inter Tight', sans-serif;
+}
+.manjari {
+  font-family: 'Manjari', sans-serif;
+}
+.monomaniac {
+  font-family: 'Monomaniac One', sans-serif;
+}
+.orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+.oxanium {
+  font-family: 'Oxanium', cursive;
+}
+.press-start {
+  font-family: 'Press Start 2P', cursive;
+}
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+.racing-sans {
+  font-family: 'Racing Sans One', cursive;
+}
+.righteous {
+  font-family: 'Righteous', cursive;
+}
+.silkscreen {
+  font-family: 'Silkscreen', cursive;
+}
+.spline-sans {
+  font-family: 'Spline Sans', sans-serif;
+}
+.syne-mono {
+  font-family: 'Syne Mono', monospace;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.font30 {
+  font-size: 70px;
+}
