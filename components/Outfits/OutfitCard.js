@@ -30,9 +30,9 @@ export default function OutfitCard({
 
   return (
     <Card className="outfit-card mt-3">
-      <CloseButton className="btn btn-outline-danger m-2" onClick={deleteThisOutfit} />
+      <CloseButton className="btn btn-outline-danger m-1" onClick={deleteThisOutfit} />
       <Card.Body className="cflex center">
-        <Card.Title className="m-3 inter-tight font35"><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
+        <Card.Title className="mb-5 archivo font35 outfit-card-title"><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
         <div className="rflex center">
           {outfitItems ? outfitItems.map((oitem) => (
             <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}

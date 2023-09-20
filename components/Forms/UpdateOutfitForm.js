@@ -317,7 +317,9 @@ export default function UpdateOutfitForm({ outfit, outfitItems }) {
             <SelectItemCarousel id="itemId" name="itemId" selectedItemId={item4Input.itemId} value={item4Input.itemId} categoryId={4} handleChange={handleSelect4Change} />
           </div>
         </div>
-        <Button variant="light" className="btn-outline-dark mt-4" type="submit">Update Outfit</Button>
+        <div className="cflex center">
+          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block" type="submit">Update Outfit</Button>
+        </div>
       </Form>
     </div>
   );

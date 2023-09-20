@@ -20,7 +20,7 @@ export default function AllOutfits() {
   }, [user]);
 
   return (
-    <div className="cflex center m-5">
+    <div className="cflex center">
       <Head>
         <title>View All Outfits</title>
       </Head>
