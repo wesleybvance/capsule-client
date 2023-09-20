@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useAuth } from '../../utils/context/authContext';
 import { createOutfit } from '../../utils/data/outfitData';
 import { createOutfitItem } from '../../utils/data/outfitItemData';
-import SelectItemCarouselTest from '../Items/SelectItemCarouselTest';
 import SelectItemCarousel from '../Items/SelectItemCarousel';
 
 const initialState = {
@@ -80,15 +79,18 @@ export default function OutfitFormTest() {
   };
 
   return (
-    <div>
+    <div className="cflex center">
       <Form onSubmit={handleSubmit}>
-        <FloatingLabel
-          controlId="floatingTextarea"
-          label="Outfit Name"
-          className="mt-3"
-        >
-          <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
-        </FloatingLabel>
+        <div className="rflex center">
+          <h3 className="m-3 racing-sans">name this outfit:</h3>
+          <FloatingLabel
+            controlId="floatingTextarea"
+            label=""
+            className="m-2 light-border width300"
+          >
+            <Form.Control required type="text" className="inter-tight font20 center" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
+          </FloatingLabel>
+        </div>
         <div className="rflex">
           <div className="cflex">
             <SelectItemCarousel id="outfitItem5" categoryId={5} handleChange={handleSelectChange} value={outfitItemValues.outfitItem5} />
@@ -96,11 +98,13 @@ export default function OutfitFormTest() {
           </div>
           <div className="cflex">
             <SelectItemCarousel id="outfitItem1" categoryId={1} handleChange={handleSelectChange} value={outfitItemValues.outfitItem1} />
-            <SelectItemCarouselTest id="outfitItem2" categoryId={2} handleChange={handleSelectChange} value={outfitItemValues.outfitItem2} />
+            <SelectItemCarousel id="outfitItem2" categoryId={2} handleChange={handleSelectChange} value={outfitItemValues.outfitItem2} />
             <SelectItemCarousel id="outfitItem4" categoryId={4} handleChange={handleSelectChange} value={outfitItemValues.outfitItem4} />
           </div>
         </div>
-        <Button variant="light" className="btn-outline-dark mt-4" type="submit">Create Outfit</Button>
+        <div className="cflex center">
+          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block" type="submit">Create Outfit</Button>
+        </div>
       </Form>
     </div>
   );

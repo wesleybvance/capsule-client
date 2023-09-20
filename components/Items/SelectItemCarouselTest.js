@@ -71,7 +71,7 @@ export default function SelectItemCarouselTest({
       </Carousel>
       <div className="item-dropd">
         <FloatingLabel controlId="floatingSelect" label={category.name}>
-          <Form.Select value={selectedDropdownValue} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-4" aria-label="">
+          <Form.Select value={selectedDropdownValue} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-2" aria-label="">
             <option value={0}>None</option>
             {items ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
           </Form.Select>

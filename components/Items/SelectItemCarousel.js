@@ -53,16 +53,16 @@ export default function SelectItemCarousel({
   };
 
   return (
-    <div className="cflex m-3">
-      <h5>{category.name}</h5>
+    <div className="cflex m-3 center">
+      <h5 className="inter-tight">{category.name}</h5>
       <Carousel interval={null} variant="dark" className="carousel" activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item value={0} className="text-center">
           <Image
             className="caropic"
-            src="https://i.pinimg.com/736x/01/e1/02/01e102dbde9816612d607b72426efb4a.jpg"
+            src="https://i.pinimg.com/564x/b0/b7/e1/b0b7e188dbae6683a26a360ef298a21b.jpg"
           />
           <Carousel.Caption>
-            <p>None</p>
+            <p className="inter-tight">None</p>
           </Carousel.Caption>
         </Carousel.Item>
         {items ? items.map((item, selectedIndex) => (
@@ -77,10 +77,10 @@ export default function SelectItemCarousel({
         )) : ''}
       </Carousel>
       <div className="item-dropd">
-        <FloatingLabel controlId="floatingSelect" label={category.name}>
-          <Form.Select value={value} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-4" aria-label="">
+        <FloatingLabel controlId="floatingSelect" className="inter-tight" label={category.name}>
+          <Form.Select value={value} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-4 inter-tight" aria-label="">
             <option value={0}>None</option>
-            {items ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
+            {items[0] ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
           </Form.Select>
         </FloatingLabel>
       </div>

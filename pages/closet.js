@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FloatingLabel, Form } from 'react-bootstrap';
 import Link from 'next/link';
+import Head from 'next/head';
 import { getItemsByUser, getItemsByUserCategory } from '../utils/data/itemData';
 import ItemCard from '../components/Items/ItemCard';
 import { useAuth } from '../utils/context/authContext';
@@ -47,7 +48,11 @@ export default function Closet() {
   };
 
   return (
-    <div className="main-closet-cont">
+    <div className="main-closet-cont cflex center">
+      <Head>
+        <title>Your Closet</title>
+      </Head>
+      <h2 className="racing-sans font30 m-3">❀ browse closet ❀</h2>
       <div className="closet-select">
         <Form>
           <div className="m-5">
@@ -64,8 +69,8 @@ export default function Closet() {
         {items[0] ? items.map((item) => (
           <ItemCard key={item.id} iid={item.id} name={item.name} categoryId={item.category_id} photoUrl={item.photo_url} onUpdate={getItemsAgain} />)) : (
             <div className="cflex center">
-              <h1 className="handjet font30">Your closet is empty!</h1>
-              <h5 className="archivo"><Link passHref href="/items/new">Click here</Link> to add something to your closet :)</h5>
+              <h1 className="handjet font30">Your closet is ~*EMPTY*~!</h1>
+              <h5 className="archivo"><Link passHref href="/items/new">☆ Click here ☆</Link> to add a clothing item :)</h5>
             </div>
         )}
       </div>

@@ -62,6 +62,7 @@ body {
   flex-wrap: wrap;
 }
 
+
 .cflexnowrap {
   display: flex;
   flex-direction: column;
@@ -76,6 +77,14 @@ body {
 .rflexnowrap {
   display: flex;
   flex-direction: row;
+}
+
+.light-border {
+  border: 1px solid black;
+}
+
+.cap-input {
+  margin: 0;
 }
 
 .margin5 {
@@ -220,3 +229,60 @@ body {
 .font30 {
   font-size: 70px;
 }
+
+.font35 {
+  font-size: 30px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.font100 {
+  font-size: 250px;
+  color: #D9D9D9;
+}
+
+.outfit-card {
+  width: 40rem;
+}
+
+.width300 {
+  width: 350px;
+}
+
+.copy-btn {
+  border-radius: 50px;
+  background-color: #D9D9D9;
+}
+
+/*  MEDIA - apply styles when screen size is 500px or smaller */
+@media (max-width: 500px) {
+  .outfit-card {
+    width: 22.5rem;
+  }
+  .carousel {
+    width: 350px;
+  }
+  .caropic {
+    height: 200px;
+  }
+  .item-dropd {
+    width: 350px;
+  }
+  .font100 {
+    font-size: 70px;
+  }
+}
+
+.sign-in-body {
+  background-color: rgb(18, 18, 18);
+}
+
+/* Start https://www.cursors-4u.com */ * 
+/* {cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;}  */
+/* End https://www.cursors-4u.com */
+
+/* Start https://www.cursors-4u.com */ * 
+{cursor: url(https://cur.cursors-4u.net/food/foo-7/foo625.cur), auto !important;}
+/* End https://www.cursors-4u.com */
