@@ -29,15 +29,15 @@ export default function OutfitCard({
   }, [oid]);
 
   return (
-    <Card style={{ width: '40rem' }}>
+    <Card className="outfit-card mt-3">
       <CloseButton className="btn btn-outline-danger m-2" onClick={deleteThisOutfit} />
-      <Card.Body>
-        <Card.Title><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
-        <div className="rflexnowrap center">
+      <Card.Body className="cflex center">
+        <Card.Title className="m-3 inter-tight font35"><Link href={`/outfits/${oid}`}>{name}</Link></Card.Title>
+        <div className="rflex center">
           {outfitItems ? outfitItems.map((oitem) => (
             <OutfitItemCard key={oitem.id} itid={oitem.item_id} />)) : 'This Outfit Is Empty'}
         </div>
-        <div className="cflex"><Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">edit</Button>
+        <div className="cflex"><Button onClick={(e) => router.replace(`/outfits/edit/${oid}`)} variant="dark">edit outfit</Button>
         </div>
       </Card.Body>
     </Card>

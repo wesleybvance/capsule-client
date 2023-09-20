@@ -5,7 +5,7 @@ import { signIn } from '../utils/auth';
 function Signin() {
   return (
     <div
-      className="text-center d-flex flex-column justify-content-center align-content-center"
+      className="sign-in-body text-center d-flex flex-column justify-content-center align-content-center"
       style={{
         height: '90vh',
         padding: '30px',
@@ -17,10 +17,9 @@ function Signin() {
         paddingBlock: '0 5rem',
       }}
     >
-      <h1>Hi there!</h1>
-      <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
-        Sign In
+      <h1 className="racing-sans font100">✰ capsule ✰</h1>
+      <Button type="button" variant="light" size="lg" className="light-border copy-btn" onClick={signIn}>
+        log in
       </Button>
     </div>
   );

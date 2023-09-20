@@ -59,7 +59,7 @@ export default function ItemForm({ currentItem }) {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form className="cflex center" onSubmit={handleSubmit}>
         <FloatingLabel controlId="floatingInput" label="Item Name" className="mt-4">
           <Form.Control value={formInput.name} onChange={handleChange} type="text" placeholder="" name="name" />
         </FloatingLabel>
@@ -70,7 +70,7 @@ export default function ItemForm({ currentItem }) {
         <FloatingLabel controlId="floatingInput" label="Photo URL" className="mt-4">
           <Form.Control value={formInput.photoUrl} onChange={handleChange} type="text" placeholder="" name="photoUrl" />
         </FloatingLabel>
-        <Button variant="light" className="btn-outline-dark" type="submit">{currentItem.id ? 'Update' : 'Create'} Item</Button>
+        <Button variant="light" className="btn-outline-dark m-3" type="submit">{currentItem.id ? 'Update' : 'Create'} Item</Button>
       </Form>
     </div>
   );
