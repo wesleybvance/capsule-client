@@ -50,6 +50,24 @@ const getOutfitsByUser = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getOutfitsBySearch = (uid, searchTerm) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/outfits?q=${searchTerm}&uid=${uid}`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
+    .catch(reject);
+});
+
 const deleteOutfit = (id) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/outfits/${id}`, {
     method: 'DELETE',
@@ -87,5 +105,5 @@ const updateOutfit = (payload) => new Promise((resolve, reject) => {
 });
 
 export {
-  getSingleOutfit, getAllOutfits, getOutfitsByUser, deleteOutfit, createOutfit, updateOutfit,
+  getSingleOutfit, getAllOutfits, getOutfitsByUser, deleteOutfit, createOutfit, updateOutfit, getOutfitsBySearch,
 };
