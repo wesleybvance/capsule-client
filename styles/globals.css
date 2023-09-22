@@ -91,6 +91,10 @@ body {
   margin: 5px;
 }
 
+.margin15 {
+  margin:80px;
+}
+
 .center {
   align-items: center;
   justify-content: center;
@@ -147,6 +151,10 @@ body {
 .centered {
   justify-self: center;
   align-self: center;
+}
+
+.home-btn:hover {
+  color: rgb(111, 66, 188);
 }
 
 .flex {
@@ -339,9 +347,11 @@ body {
 }
 
 /* Start https://www.cursors-4u.com */ * 
-/* {cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;}  */
+{cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;} 
 /* End https://www.cursors-4u.com */
 
-/* Start https://www.cursors-4u.com */ * 
-{cursor: url(https://cur.cursors-4u.net/food/foo-7/foo625.cur), auto !important;}
+/* Start https://www.cursors-4u.com *  */
+/* {cursor: url(https://cur.cursors-4u.net/food/foo-7/foo625.cur), auto !important;} */
 /* End https://www.cursors-4u.com */
+
+/* https://i.etsystatic.com/46227257/r/il/a400d4/5289730391/il_794xN.5289730391_3u4r.jpg */
