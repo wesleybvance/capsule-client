@@ -162,13 +162,13 @@ body {
 }
 
 .home-btn {
-  text-shadow: 1px 1px #a0c9d7;
+  text-shadow: 1px 1px #3dbfea;
 }
 
 .home-btn:hover {
-  color: rgb(37, 193, 255);
+  color: rgb(51, 197, 255);
   font-style: italic;
-  text-shadow: 1px 1px #8de1ff;
+  text-shadow: 1px 1px #070a0a;
 }
 
 .flex {
@@ -421,6 +421,7 @@ body {
 } 
 
 /* https://i.etsystatic.com/46227257/r/il/a400d4/5289730391/il_794xN.5289730391_3u4r.jpg */
+
 
 /* sparkly blue  */
 .cursor2 {

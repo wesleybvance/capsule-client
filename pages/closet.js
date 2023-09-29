@@ -28,13 +28,10 @@ export default function Closet() {
 
   useEffect(() => {
     getAllCategories().then((data) => setCategories(data));
-    if (formSelect.category === 'none') {
-      getItemsByUser(user.id).then(setItems);
-    } else if (formSelect.category) {
+    if (formSelect.category[0]) {
       getItemsByCategory(formSelect.category);
     } else {
-      getItemsByUser(user.id).then(setItems);
-      console.warn(items);
+      getItemsAgain();
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [formSelect.category]);
