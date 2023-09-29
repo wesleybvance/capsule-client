@@ -21,7 +21,7 @@ export default function ViewOutfit() {
   return (
     <div className="cflex center">
       <Head>
-        <title>Add an Item to Your Closet</title>
+        <title>View Outfit</title>
       </Head>
       <h2 className="racing-sans font30 m-3">♡ view outfit ♡</h2>
       {outfit ? (<OutfitPage name={outfit.name} outfitId={outfit.id} />) : ''}

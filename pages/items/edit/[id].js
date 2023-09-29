@@ -16,7 +16,8 @@ export default function EditItem() {
   }, [router.query.id]);
 
   return (
-    <div>
+    <div className="cflex center">
+      <h2 className="racing-sans font30 m-3">✻ edit item ✻</h2>
       <ItemForm currentItem={editItem} />
     </div>
   );

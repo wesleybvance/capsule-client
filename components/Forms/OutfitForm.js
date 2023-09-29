@@ -88,7 +88,7 @@ export default function OutfitFormTest() {
             label=""
             className="m-2 light-border width300"
           >
-            <Form.Control required type="text" className="inter-tight font20 center" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
+            <Form.Control required type="text" className="box-border inter-tight font20 center" name="name" onChange={({ target }) => setFormInput((prev) => ({ ...prev, [target.name]: target.value }))} />
           </FloatingLabel>
         </div>
         <div className="rflex">
@@ -103,7 +103,7 @@ export default function OutfitFormTest() {
           </div>
         </div>
         <div className="cflex center">
-          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block" type="submit">Create Outfit</Button>
+          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block box-border" type="submit">Create Outfit</Button>
         </div>
       </Form>
     </div>
