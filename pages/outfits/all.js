@@ -29,7 +29,7 @@ export default function AllOutfits() {
         <title>View All Outfits</title>
       </Head>
       <h2 className="racing-sans font30 m-3">✭ browse outfits ✭</h2>
-      <Form.Control type="text" name="searchTerm" required placeholder="Enter search term or tag name" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+      <Form.Control className="box-border borderline" type="text" name="searchTerm" required placeholder="Enter search term or tag name" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
       {outfits[0] ? outfits.map((outfit) => (
         <OutfitCard key={outfit.id} name={outfit.name} oid={outfit.id} onUpdate={getUserOutfits} />)) : (
           <div className="cflex center">

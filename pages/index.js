@@ -11,7 +11,7 @@ function Home() {
         <title>Home</title>
       </Head>
       <WelcomeUser />
-      <div className="cflex cleft margin15">
+      <div className="cflex cright margin15">
         <Link passHref href="/closet"><h3 className="racing-sans m-3 font30 home-btn">❀  view your closet </h3></Link>
         <Link passHref href="/items/new"><h3 className="racing-sans m-3 font30 home-btn">✻  add item to closet</h3></Link>
         <Link passHref href="/outfits/new"><h3 className="racing-sans m-3 font30 home-btn">✰  create an outfit</h3></Link>

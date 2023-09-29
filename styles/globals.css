@@ -26,7 +26,11 @@ body {
 }
 
 .width100 {
-  max-width: 100px;
+  max-width: 150px;
+}
+
+.width299 {
+  width: 300px;
 }
 
 .caropic {
@@ -44,6 +48,10 @@ body {
 
 .small-text {
   font-size: 12px;
+}
+
+.big-text {
+  font-size: 15px;
 }
 
 .outfit-item-card-body {
@@ -119,7 +127,7 @@ body {
 };
 
 .toast-cont {
-  max-width: 1000px;
+  width: 1200px;
 }
 
 .form-input-500 {
@@ -153,8 +161,14 @@ body {
   align-self: center;
 }
 
+.home-btn {
+  text-shadow: 1px 1px #a0c9d7;
+}
+
 .home-btn:hover {
-  color: rgb(111, 66, 188);
+  color: rgb(37, 193, 255);
+  font-style: italic;
+  text-shadow: 1px 1px #8de1ff;
 }
 
 .flex {
@@ -193,9 +207,6 @@ body {
 }
 .audiowide {
   font-family: 'Audiowide', cursive;
-}
-.bruno {
-  font-family: 'Bruno Ace', cursive;
 }
 .chango {
   font-family: 'Chango', cursive;
@@ -261,6 +272,10 @@ body {
   font-family: 'Syne Mono', monospace;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .italic {
   font-style: italic;
 }
@@ -287,10 +302,7 @@ body {
 }
 
 .outfit-card {
-  width: 40rem;
-  /* background-image: url("https://i.pinimg.com/564x/4f/cf/57/4fcf570c8266dd27ac0f7bffdbfad3e9.jpg");
-  background-repeat: no-repeat;
-  background-size: cover; */
+  width: 1000px;
 }
 
 .width300 {
@@ -303,13 +315,47 @@ body {
 }
 
 .outfit-card-title:hover {
-  color: rgb(111, 66, 188);
+  color: rgb(37, 187, 251);
+  font-family: 'archivo';
   font-style: italic;
-  font-family: 'silkscreen';
+}
+
+.edit-btn {
+  background-color: white;
+  border: none;
+  color: black;
+  font-family: 'Archivo', sans-serif;
+  border-radius: 1px;
+  font-size: 16px;
+}
+
+.box-border {
+  border-radius: 1px;
+}
+
+.borderline {
+  border: 1px solid black;
+}
+
+.edit-btn:hover {
+  border: 1px solid black;
+  font-style: oblique;
 }
 
 /*  MEDIA - apply styles when screen size is 500px or smaller */
 @media (max-width: 500px) {
+  .edit-btn {
+    font-size: 12px;
+  }
+  .item-card {
+    max-width: 150px;
+  }
+  .title-text {
+    font-size: 15px;
+  }
+  .body-text {
+    font-size: 10px;
+  }
   .outfit-card {
     width: 20.5rem;
   }
@@ -340,18 +386,59 @@ body {
   .font35 {
     font-size: 25px;
   }
+  .width299 {
+    width: 100px;
+  }
+  .width100 {
+    width: 90px;
+  }
+}
+
+.absolute {
+  position: absolute;
+}
+
+.toast-vid {
+  z-index: 1000;
+}
+
+.fixed {
+  position:fixed;
 }
 
 .sign-in-body {
   background-color: rgb(18, 18, 18);
 }
 
-/* Start https://www.cursors-4u.com */ * 
-{cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;} 
-/* End https://www.cursors-4u.com */
+/* white star  */
+.cursor5 {
+  cursor: url(https://cur.cursors-4u.net/symbols/sym-6/sym597.cur), auto !important;
+} 
 
-/* Start https://www.cursors-4u.com *  */
-/* {cursor: url(https://cur.cursors-4u.net/food/foo-7/foo625.cur), auto !important;} */
-/* End https://www.cursors-4u.com */
+/* coke can  */
+.cursor6 {
+  cursor: url(https://cur.cursors-4u.net/food/foo-7/foo625.cur), auto !important;
+} 
 
 /* https://i.etsystatic.com/46227257/r/il/a400d4/5289730391/il_794xN.5289730391_3u4r.jpg */
+
+/* sparkly blue  */
+.cursor2 {
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-1/cur8.ani), url(https://cur.cursors-4u.net/cursors/cur-1/cur8.png), auto !important;
+} 
+
+/* apple  */
+.cursor1 {
+  cursor: url("https://downloads.totallyfreecursors.com/cursor_files/appletm.cur"), url("https://downloads.totallyfreecursors.com/thumbnails/apple-tm.gif"), auto !important;}
+/* classic */
+.cursor {
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=170652), auto !important;
+}
+
+/* fashion girl  */
+.cursor3 {
+  cursor: url(https://cur.cursors-4u.net/special/spe-2/spe191.ani), url(https://cur.cursors-4u.net/special/spe-2/spe191.png), auto !important;
+}
+
+/* smiley */
+/* * {cursor: url(https://cur.cursors-4u.net/smilies/smi-1/smi28.cur), auto !important;}  */

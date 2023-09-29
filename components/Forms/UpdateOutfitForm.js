@@ -298,13 +298,13 @@ export default function UpdateOutfitForm({ outfit, outfitItems }) {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} className="cflex center">
         <FloatingLabel
           controlId="floatingTextarea"
           label="Outfit Name"
           className="mt-3"
         >
-          <Form.Control required type="text" placeholder="Shopping at the Mall" name="name" onChange={handleOutfitChange} value={outfitInput.name} />
+          <Form.Control className="form-input-500 box-border borderline" required type="text" placeholder="Shopping at the Mall" name="name" onChange={handleOutfitChange} value={outfitInput.name} />
         </FloatingLabel>
         <div className="rflex">
           <div className="cflex">
@@ -318,7 +318,7 @@ export default function UpdateOutfitForm({ outfit, outfitItems }) {
           </div>
         </div>
         <div className="cflex center">
-          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block" type="submit">Update Outfit</Button>
+          <Button variant="light" className="inter-tight btn-outline-dark m-4 d-inline-block box-border" type="submit">Update Outfit</Button>
         </div>
       </Form>
     </div>

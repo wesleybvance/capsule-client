@@ -26,14 +26,14 @@ export default function ItemCard({
     getCategoryInfo(categoryId);
   }, [categoryId]);
   return (
-    <Card style={{ width: '18rem' }} className="m-2">
+    <Card style={{ width: '18rem' }} className="box-border borderline m-2 item-card">
       <CloseButton className="m-2 btn btn-outline-danger" onClick={deleteThisItem} />
-      <Card.Img variant="top" src={photoUrl} />
-      <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        {category ? (<Card.Text>{category.name}</Card.Text>) : ''}
+      <Card.Img variant="top" className="box-border" src={photoUrl} />
+      <Card.Body className="cflex center">
+        <Card.Title className="archivo bold title-text">{name}</Card.Title>
+        {category ? (<Card.Text className="archivo body-text">{category.name}</Card.Text>) : ''}
       </Card.Body>
-      <Button className="mt-4" onClick={(e) => router.replace(`/items/edit/${iid}`)} variant="dark">edit</Button>
+      <Button className="mt-2 edit-btn" onClick={(e) => router.replace(`/items/edit/${iid}`)} variant="dark">edit</Button>
     </Card>
   );
 }

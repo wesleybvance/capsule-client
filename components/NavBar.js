@@ -10,6 +10,8 @@ import {
 import { signOut } from '../utils/auth';
 
 export default function NavBar() {
+  // eslint-disable-next-line no-unused-vars
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>

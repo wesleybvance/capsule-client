@@ -57,7 +57,7 @@ export default function Closet() {
         <Form>
           <div className="m-5">
             <FloatingLabel controlId="floatingInput1" label="Category">
-              <Form.Select className="form-input-500" aria-label="Select Category" required name="category" onChange={handleChange}>
+              <Form.Select className="box-border borderline form-input-500" aria-label="Select Category" required name="category" onChange={handleChange}>
                 <option value="none">All Clothing Items</option>
                 {categories.map((category) => (<CategorySelect key={category.id} id={category.id} name={category.name} />))}
               </Form.Select>

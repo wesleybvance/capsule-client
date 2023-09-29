@@ -78,7 +78,7 @@ export default function SelectItemCarousel({
       </Carousel>
       <div className="item-dropd">
         <FloatingLabel controlId="floatingSelect" className="inter-tight" label={category.name}>
-          <Form.Select value={value} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-4 inter-tight" aria-label="">
+          <Form.Select value={value} onChange={(e) => handleDropdownChange(id, e.target.value)} className="mt-4 inter-tight box-border borderline" aria-label="">
             <option value={0}>None</option>
             {items[0] ? items.map((item) => (<option key={`item--${item.id}`} value={Number(item.id)}>{item.name}</option>)) : (<option>You don't have any {category.name} in your closet yet.</option>)}
           </Form.Select>
