@@ -52,23 +52,24 @@ export default function ItemForm({ currentItem }) {
       updateItem(formInput).then(() => router.push('/closet'));
     } else {
       const payload = { ...formInput, uid: user.id };
-      console.warn(payload);
-      createItem(payload).then(router.replace('/closet'));
+      createItem(payload);
+      console.warn('item created');
+      router.push('/closet');
     }
   };
 
   return (
     <div>
       <Form className="cflex center" onSubmit={handleSubmit}>
-        <FloatingLabel controlId="floatingInput" label="Item Name" className="mt-4">
+        <FloatingLabel required controlId="floatingInput" label="Item Name" className="mt-4">
           <Form.Control className="box-border borderline form-input-500" value={formInput.name} onChange={handleChange} type="text" placeholder="" name="name" />
         </FloatingLabel>
-        <Form.Select value={formInput.categoryId} name="categoryId" onChange={handleChange} className="mt-4 form-input-500 box-border borderline" aria-label="">
+        <Form.Select required value={formInput.categoryId} name="categoryId" onChange={handleChange} className="mt-4 form-input-500 box-border borderline" aria-label="">
           <option>Select a Category</option>
           {categories ? categories.map((category) => (<CategorySelect key={category.id} id={category.id} name={category.name} />)) : (<option>No Categories Available</option>)}
         </Form.Select>
         <FloatingLabel controlId="floatingInput" label="Photo URL" className="mt-4">
-          <Form.Control className="box-border borderline form-input-500" value={formInput.photoUrl} onChange={handleChange} type="text" placeholder="" name="photoUrl" />
+          <Form.Control required className="box-border borderline form-input-500" value={formInput.photoUrl} onChange={handleChange} type="text" placeholder="" name="photoUrl" />
         </FloatingLabel>
         <Button variant="light" className="box-border btn-outline-dark m-3" type="submit">{currentItem.id ? 'update' : 'add'}</Button>
       </Form>

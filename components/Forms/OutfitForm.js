@@ -42,7 +42,6 @@ export default function OutfitFormTest() {
           outfitId: data.id,
           itemId: outfitItemValues.outfitItem1,
         };
-        console.warn(payload);
         createOutfitItem(payload);
       }
       if (outfitItemValues.outfitItem2) {
@@ -71,7 +70,6 @@ export default function OutfitFormTest() {
           outfitId: data.id,
           itemId: outfitItemValues.outfitItem5,
         };
-        console.warn(payload);
         createOutfitItem(payload);
       }
       router.push('/outfits/all');

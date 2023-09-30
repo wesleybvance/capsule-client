@@ -21,39 +21,42 @@ function RegisterForm({ user, updateUser }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="First Name"
-        className="mt-3"
-      >
-        <Form.Control type="text" placeholder="Cher" name="firstName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </FloatingLabel>
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="Last Name"
-        className="mt-3"
-      >
-        <Form.Control type="text" placeholder="Horowitz" name="lastName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
-      </FloatingLabel>
-      <FloatingLabel
-        controlId="floatingInput"
-        label="Email Address"
-        className="mt-3"
-      >
-        <Form.Control type="email" name="email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="name@example.com" />
-      </FloatingLabel>
-      <FloatingLabel
-        controlId="floatingTextarea"
-        label="Profile Picture URL"
-        className="mt-3"
-      >
-        <Form.Control type="text" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="" name="profileImage" />
-      </FloatingLabel>
-      <Button variant="primary" type="submit" className="mt-3">
-        Submit
-      </Button>
-    </Form>
+    <div className="cflex">
+      <h2 className="racing-sans font30 m-3 center-me">♡ sign up ♡</h2>
+      <Form onSubmit={handleSubmit}>
+        <FloatingLabel
+          controlId="floatingTextarea"
+          label="First Name"
+          className="mt-3"
+        >
+          <Form.Control required className="archivo box-border borderline" type="text" placeholder="Cher" name="firstName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+        </FloatingLabel>
+        <FloatingLabel
+          controlId="floatingTextarea"
+          label="Last Name"
+          className="mt-3"
+        >
+          <Form.Control className="archivo box-border borderline" type="text" placeholder="Horowitz" name="lastName" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} />
+        </FloatingLabel>
+        <FloatingLabel
+          controlId="floatingInput"
+          label="Email Address"
+          className="mt-3"
+        >
+          <Form.Control className="archivo box-border borderline" type="email" name="email" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="name@example.com" />
+        </FloatingLabel>
+        <FloatingLabel
+          controlId="floatingTextarea"
+          label="Profile Picture URL"
+          className="mt-3"
+        >
+          <Form.Control required className="archivo box-border borderline" type="text" onChange={({ target }) => setFormData((prev) => ({ ...prev, [target.name]: target.value }))} placeholder="" name="profileImage" />
+        </FloatingLabel>
+        <Button variant="light" type="submit" className="inter-tight btn-outline-dark m-4 d-inline-block box-border center-me">
+          Submit
+        </Button>
+      </Form>
+    </div>
   );
 }
 
